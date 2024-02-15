@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sign up</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+	<link rel='stylesheet'
+		href='https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css'>
+	<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+	<!-- partial:index.partial.html -->
+	<img src="logo1.jpg" width="403" height="132"></img>
+
+	<body class="login">
+		<div class="container">
+			<div class="login-container-wrapper clearfix">
+				<ul class="switcher clearfix">
+					<li class="first logo active" data-tab="login">
+						<a>Login</a>
+					</li>
+					<li class="second logo" data-tab="sign_up">
+						<a>Sign Up</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="login">
+						<form class="form-horizontal login-form">
+							<div class="form-group relative">
+								<input class="form-control input-lg" id="login_username" placeholder="E-mail Address"
+									required="" type="email"> <i class="fa fa-user"></i>
+							</div>
+							<div class="form-group relative">
+								<input class="form-control input-lg" id="login_password" placeholder="Password"
+									required="" type="password"> <i class="fa fa-lock"></i>
+							</div>
+							<div class="form-group">
+								<button class="btn btn-success btn-lg btn-block" type="submit">Login</button>
+							</div>
+							<div class="checkbox checkbox-success">
+								<input id="stay-sign" type="checkbox">
+								<label for="stay-sign">Stay signed in</label>
+							</div>
+							<hr />
+							<div class="text-center">
+								<label><a href="#">Forgot your password?</a></label>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane" id="sign_up">
+						<form class="form-horizontal login-form">
+							<div class="form-group relative">
+								<input class="form-control input-lg" id="login_username" placeholder="E-mail Address"
+									required="" type="email"> <i class="fa fa-user"></i>
+							</div>
+							<div class="form-group relative">
+								<input class="form-control input-lg" id="login_password" placeholder="Password"
+									required="" type="password"> <i class="fa fa-lock"></i>
+							</div>
+							<div class="form-group relative">
+								<input class="form-control input-lg" id="login_password" placeholder="Repeat Password"
+									required="" type="password"> <i class="fa fa-lock"></i>
+							</div>
+							<div class="form-group">
+								<button class="btn btn-success btn-lg btn-block" type="submit">Sign Up</button>
+							</div>
+							<div class="checkbox checkbox-success">
+								<input id="agree-terms" type="checkbox">
+								<label for="agree-terms"> Agree our terms</label>
+							</div>
+							<hr>
+							<div class="text-center">
+								<label><a href="#">Already Member?</a></label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!-- partial -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+	<script src="./script.js"></script>
+
+</body>
+
+</html>

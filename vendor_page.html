@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Company Logo">
+        <form action="#">
+            <input type="text" placeholder="Search Vendors...">
+            <button type="submit">Search</button>
+        </form>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="vendor-details">
+            <div class="vendor-banner"><img src="https://i.postimg.cc/yWG9R4LY/JBPL-logo-03.png" alt="Vendor Image" class="vendor-image"></div>
+            <div class="vendor-info">
+                <h2>
+                    BOC Group
+                    <!--{{ vendor.name }}-->
+                </h2>
+                <p>
+                    ADOIT is an enterprise architecture management tool that provides functionalities and methods for enterprise analysis, design, planning, and implementation. The platform supports alignment and improvement of dependencies between business and IT as well as manages and analyses the dependencies between different organizational assets.
+                    <!--{{ vendor.description }}-->
+                </p>
+                <a href="#">Contact Vendor</a>
+                <a href="#">Edit Info</a>
+            </div>
+        </section>
+
+        <section class="product-list">
+            <div class="add">
+                <h2>Products</h2>
+                <a id="add-btn" href="#">Add product</a>
+            </div>
+            
+            {% for product in vendor.products.all %}
+            <div class="product">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <span class="price">&#36;{{ product.price }}</span>
+                <a href="#">Visit Product Page</a>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Company Name</p>
+    </footer>
+</body>
+</html>

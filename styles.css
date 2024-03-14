@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Varela);
+
+body {
+  font-family: Varela, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #1d045e
+}
+
+
+
+nav {
+  background-color: #100331;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  color: #df1e1e;
+}
+
+.nav li a.active {
+  font-weight: bold;
+}
+
+.nav li a.active:hover {
+  color: #d31111;
+}
+
+section#main-content {
+  padding: 20px;
+}
+
+
+
+footer {
+  background-color: #100333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}

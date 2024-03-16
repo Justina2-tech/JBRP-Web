@@ -1,162 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Sign up</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css'>
-    <link rel="stylesheet" href="./style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e36dde461a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Citisoft</title>
 </head>
-
 <body>
-
-    <div class="login-page"><img src="logo1.jpg" width="403" height="132"></img>
-
-        <div class="login">
-
-            <div class="container">
-                <div class="login-container-wrapper clearfix">
-                    <ul class="switcher clearfix">
-                        <li class="first logo active" data-tab="login">
-                            <a>Login</a>
-                        </li>
-                        <li class="second logo" data-tab="sign_up">
-                            <a>Sign Up</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="login">
-                            <form class="form-horizontal login-form">
-                                <div class="form-group relative">
-                                    <input class="form-control input-lg" id="login_username" placeholder="E-mail Address" required="" type="email"> <i class="fa fa-user"></i>
-                                </div>
-                                <div class="form-group relative">
-                                    <input class="form-control input-lg" id="login_password" placeholder="Password" required="" type="password"> <i class="fa fa-lock"></i>
-                                </div>
-                                <div class="form-group">
-                                    <button class="btn btn-success btn-lg btn-block" type="submit">Login</button>
-                                </div>
-                                <!-- <div class="checkbox checkbox-success">
-                                    <input id="stay-sign" type="checkbox">
-                                    <label for="stay-sign">Stay signed in</label>
-                                </div> -->
-                                <hr />
-                                <div class="text-center">
-                                    <label><a href="#" id="forgotPasswordLink">Forgot your password?</a></label>
-                                </div>
-                            </form>
-                        </div>
-						<div class="tab-pane" id="sign_up">
-							<form class="form-horizontal login-form">
-								<div class="form-group relative">
-									<input class="form-control input-lg" id="login_username" placeholder="E-mail Address"
-										required="" type="email"> <i class="fa fa-user"></i>
-								</div>
-								<div class="form-group relative">
-									<select class="form-control input-lg" id="user_type" required="">
-										<option value="" disabled selected>Select User Type</option>
-										<option value="customer">Customer</option>
-										<option value="vendor">Vendor</option>
-									</select>
-									<i class="fa fa-user"></i>
-								</div>
-								<div class="form-group relative">
-									<input class="form-control input-lg" id="login_password" placeholder="Password"
-										required="" type="password"> <i class="fa fa-lock"></i>
-								</div>
-								<div class="form-group relative">
-									<input class="form-control input-lg" id="login_password" placeholder="Confirm Password"
-										required="" type="password"> <i class="fa fa-lock"></i>
-								</div>
-								<div class="form-group">
-									<button class="btn btn-success btn-lg btn-block" type="submit"><a
-											href='profile.html'>Sign Up</a></button>
-								</div>
-								<hr>
-								<div class="text-center">
-									<label><a href="#" id="showLoginForm">Already Member?</a></label>
-								</div>
-								
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div></div>
-		
-                    </div>
-                </div>
+     <!--=============== HEADER ===============-->
+     <header class="header">
+        <nav class="nav container">
+          <div class="nav__data">
+            <a href="#" class="nav__logo">
+              <img src="https://i.postimg.cc/tJbxhL0G/JBPL-logo-03.jpg" />
+            </a>
+            <form action="#" class="ml-5">
+              <input type="text" placeholder="Search Vendors..." />
+              <button type="submit">Search</button>
+            </form>
+  
+            <div class="nav__toggle" id="nav-toggle">
+              <i class="ri-menu-line nav__toggle-menu"></i>
+              <i class="ri-close-line nav__toggle-close"></i>
             </div>
+          </div>
+  
+          <!--=============== NAV MENU ===============-->
+          <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+              <li class="dropdown__item">
+                <div class="nav__link dropdown__button">Home</div>
+              </li>
+              <a href="products/products.html"><li class="dropdown__item">
+                 <div class="nav__link dropdown__button"  >Products</div></a>
+              </li>
+              <li class="dropdown__item">
+                <div class="nav__link dropdown__button"  >signup</div>
+              </li>
+              <li class="dropdown__item">
+                <div class="nav__link dropdown__button"  >login</div>
+              </li>
+           
+  
+              <!--=============== DROPDOWN 3 ===============-->
+              <li class="dropdown__item">
+                <div class="nav__link dropdown__button">Pages</div>
+  
+                <div class="dropdown__container">
+                  <div class="dropdown__content">
+                    <div class="dropdown__group">
+                      <div class="dropdown__icon">
+                        <i class="ri-community-line"></i>
+                      </div>
+  
+                      <span class="dropdown__title">Link 1</span>
+  
+                      <ul class="dropdown__list">
+                        <li>
+                          <a href="#" class="dropdown__link">About us</a>
+                        </li>
+                        <li>
+                          <a href="#" class="dropdown__link">Support</a>
+                        </li>
+                        <li>
+                          <a href="#" class="dropdown__link">Contact us</a>
+                        </li>
+                      </ul>
+                    </div>
+  
+                    <div class="dropdown__group">
+                      <div class="dropdown__icon">
+                        <i class="ri-shield-line"></i>
+                      </div>
+  
+                      <span class="dropdown__title">Link 2</span>
+  
+                      <ul class="dropdown__list">
+                        <li>
+                          <a href="#" class="dropdown__link">Cookie settings</a>
+                        </li>
+                        <li>
+                          <a href="#" class="dropdown__link">Privacy Policy</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="dropdown__group">
+                      <div class="dropdown__icon">
+                        <i class="ri-shield-line"></i>
+                      </div>
+  
+                      <span class="dropdown__title">Link 3</span>
+  
+                      <ul class="dropdown__list">
+                        <li>
+                          <a href="#" class="dropdown__link">Cookie settings</a>
+                        </li>
+                        <li>
+                          <a href="#" class="dropdown__link">Privacy Policy</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+        <div class="text-center">
+            <h1 class="banner-heading mb-3">The Best Products For You All In One Place </h1>
+            <form class="example" action="/action_page.php">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ALL</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Vendors</a>
+                            <a class="dropdown-item" href="products.html">Products</a>
+                            <a class="dropdown-item" href="#">Services</a>
+                            
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                </div>
+                </br><button type="submit" class="btn btn-primary button">Search</button>
+            </form>
+
         </div>
     </div>
+    <div class="container py-5">
+        <div>
+            <h1 class="seven">Categories</h1>
+        </div>
 
-    <div id="forgotPasswordSection" style="display: none;">
-        <form class="form-horizontal login-form">
+        <div class="row row_branchen">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="card">
+                    <a href="#">
+                        <div class="image__wrapper">
+                            <div class="card__shadow--1"></div>
+                            <img class="card-img-top" src="https://img.freepik.com/free-photo/still-life-business-roles-with-various-mechanism-pieces_23-2149352652.jpg?size=626&ext=jpg&ga=GA1.2.1491199935.1707358628&semt=sph" alt="Angebote - Verkaufsautomaten">
+                        </div>
+                        <div class="card-body pb-4">
+                            <h3 class="card-title">Services</h3>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-			<h3> Forgot Password? </h3>
-            <div class="form-group relative">
-                <input class="form-control input-lg" id="forgot_password_email" placeholder="E-mail Address" required="" type="email"> <i class="fa fa-envelope"></i>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="card">
+                    <a href="#">
+                        <div class="image__wrapper">
+                            <div class="card__shadow--1"></div>
+                            <img class="card-img-top" src="https://img.freepik.com/free-photo/standard-quality-control-concept-m_23-2150041859.jpg?size=626&ext=jpg&ga=GA1.2.1491199935.1707358628&semt=sph" alt="Angebote Wasserspender">
+                        </div>
+                        <div class="card-body pb-4">
+                            <h3 class="card-title">Software</h3>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="form-group">
-                <button class="btn btn-success btn-lg btn-block" type="submit">Send OTP</button>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="card">
+                    <a href="#">
+                        <div class="image__wrapper">
+                            <div class="card__shadow--1"></div>
+                            <img class="card-img-top" src="https://img.freepik.com/premium-photo/modern-digital-devices-transfer-storage-information_220873-2706.jpg?size=626&ext=jpg&ga=GA1.2.1491199935.1707358628&semt=ais" alt="Angebote Wasserspender">
+                        </div>
+                        <div class="card-body pb-4">
+                            <h3 class="card-title">Electronics</h3>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <hr>
-            <div class="form-group relative">
-                <input class="form-control input-lg" id="forgot_password_otp" placeholder="Enter OTP" required="" type="text"> <i class="fa fa-lock"></i>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="card">
+                    <a href="#">
+                        <div class="image__wrapper">
+                            <div class="card__shadow--1"></div>
+                            <img class="card-img-top" src="https://img.freepik.com/free-vector/maintenance-concept-illustration_114360-391.jpg?size=626&ext=jpg&ga=GA1.2.1491199935.1707358628&semt=sph" alt="Angebote Wasserspender">
+                        </div>
+                        <div class="card-body pb-4">
+                            <h3 class="card-title">Maintenance</h3>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="form-group">
-                <button class="btn btn-success btn-lg btn-block" type="submit">Verify OTP</button>
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="card">
+                    <a href="#">
+                        <div class="image__wrapper">
+                            <div class="card__shadow--1"></div>
+                            <img class="card-img-top" src="https://img.freepik.com/free-vector/hand-drawn-rose-background-wreath-frame-design_21799-10432.jpg?size=626&ext=jpg&ga=GA1.2.1491199935.1707358628&semt=sph" alt="Angebote Wasserspender">
+                        </div>
+                        <div class="card-body pb-4">
+                            <h3 class="card-title">Decoration</h3>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-			<div class="text-center">
-				<label><a href="#" id="rememberPasswordLink">Remember password?</a></label>
-			</div>
-        </form>
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="card">
+                    <a href="#">
+                        <div class="image__wrapper">
+                            <div class="card__shadow--1"></div>
+                            <img class="card-img-top" src="https://img.freepik.com/premium-photo/buying-new-house-concept_35034-364.jpg?size=626&ext=jpg&ga=GA1.2.1491199935.1707358628&semt=ais" alt="Angebote Wasserspender">
+                        </div>
+                        <div class="card-body pb-4">
+                            <h3 class="card-title">Real Estate</h3>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
     </div>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <a class="navbar-brand" href="#">
+                                <img src="https://i.postimg.cc/tJbxhL0G/JBPL-logo-03.jpg" class="food-munch-logo img" />
+                            </a>
+                        </h6>
+                        <p>
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">#</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">#</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">#</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">#</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> Cambridge , CB1 1PT , Uk </p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            JBPL@ARU.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 44 794 020 3497</p>
+                        <p><i class="fas fa-print me-3"></i> + 44 786 222 444</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">JBPL.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
 
-    <!-- partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-    <script>
-        $(document).ready(function () {
-            $('ul.switcher li').click(function () {
-                var tab_id = $(this).attr('data-tab');
-
-                $('li').removeClass('active');
-                $('div.tab-pane').removeClass('active');
-
-                $(this).addClass('active');
-                $("#" + tab_id).addClass('active');
-            })
-        })
-    </script>
-    <script>
-        document.getElementById("forgotPasswordLink").addEventListener("click", function (event) {
-            event.preventDefault();
-            document.getElementById("forgotPasswordSection").style.display = "block";
-            document.querySelector(".login-container-wrapper").style.display = "none";
-        });
-    </script>
-	<script>
-		document.getElementById("rememberPasswordLink").addEventListener("click", function(event) {
-			event.preventDefault();
-			document.getElementById("forgotPasswordSection").style.display = "none";
-			document.querySelector(".login-container-wrapper").style.display = "block";
-		});
-	</script>
-	<script>
-		document.getElementById("showLoginForm").addEventListener("click", function(event) {
-			event.preventDefault();
-			document.getElementById("sign_up").style.display = "none";
-			document.getElementById("login").style.display = "block";
-		});
-	</script>
-	
-	
+      <script src="main.js"></script>
 </body>
-
 </html>

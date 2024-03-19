@@ -1,0 +1,218 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css'>
+    <link rel="stylesheet" href="{% static 'fullstack/css/style.css' %}">
+    {% csrf_token %}
+</head>
+
+<body>
+
+    <div class="login-page">
+        <img src="{% static 'fullstack/img/logo1.jpg' %}" width="403" height="132"></img>
+
+        <div class="login">
+
+            <div class="container">
+                <div class="login-container-wrapper clearfix">
+                    <ul class="switcher clearfix">
+                        <li class="first logo active" data-tab="login">
+                            <a>Login</a>
+                        </li>
+                        <li class="second logo" data-tab="sign_up">
+                            <a>Sign Up</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="login">
+                            <form class="form-horizontal login-form" id="loginForm">
+                                <div class="form-group relative">
+                                    <input class="form-control input-lg" id="login_username" placeholder="E-mail Address" required="" type="email">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="form-group relative">
+                                    <input class="form-control input-lg" id="login_password" placeholder="Password" required="" type="password">
+                                    <i class="fa fa-lock"></i>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-lg btn-block" type="submit">Login</button>
+                                </div>
+                                <hr />
+                                <div class="text-center">
+                                    <label><a href="#" id="forgotPasswordLink">Forgot your password?</a></label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="sign_up">
+                            <form class="form-horizontal login-form" id="signupForm">
+                                <div class="form-group relative">
+                                    <input class="form-control input-lg" id="signup_username" placeholder="E-mail Address" required="" type="email">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="form-group relative">
+                                    <select class="form-control input-lg" id="user_type" required="">
+                                        <option value="" disabled selected>Select User Type</option>
+                                        <option value="customer">Customer</option>
+                                        <option value="vendor">Vendor</option>
+                                    </select>
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="form-group relative">
+                                    <input class="form-control input-lg" id="signup_password" placeholder="Password" required="" type="password">
+                                    <i class="fa fa-lock"></i>
+                                </div>
+                                <div class="form-group relative">
+                                    <input class="form-control input-lg" id="confirm_password" placeholder="Confirm Password" required="" type="password">
+                                    <i class="fa fa-lock"></i>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success btn-lg btn-block" type="submit">Sign Up</button>
+                                </div>
+                                <hr>
+                                <div class="text-center">
+                                    <label><a href="#" id="showLoginForm">Already Member?</a></label>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="forgotPasswordSection" style="display: none;">
+        <form class="form-horizontal login-form">
+
+            <h3> Forgot Password? </h3>
+            <div class="form-group relative">
+                <input class="form-control input-lg" id="forgot_password_email" placeholder="E-mail Address" required="" type="email">
+                <i class="fa fa-envelope"></i>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success btn-lg btn-block" type="submit">Send OTP</button>
+            </div>
+            <hr>
+            <div class="form-group relative">
+                <input class="form-control input-lg" id="forgot_password_otp" placeholder="Enter OTP" required="" type="text">
+                <i class="fa fa-lock"></i>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success btn-lg btn-block" type="submit">Verify OTP</button>
+            </div>
+            <div class="text-center">
+                <label><a href="#" id="rememberPasswordLink">Remember password?</a></label>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script>
+        $(document).ready(function () {
+            $('ul.switcher li').click(function () {
+                var tab_id = $(this).attr('data-tab');
+
+                $('li').removeClass('active');
+                $('div.tab-pane').removeClass('active');
+
+                $(this).addClass('active');
+                $("#" + tab_id).addClass('active');
+            })
+        })
+    </script>
+    <script>
+        document.getElementById("forgotPasswordLink").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("forgotPasswordSection").style.display = "block";
+            document.querySelector(".login-container-wrapper").style.display = "none";
+        });
+    </script>
+	<script>
+		document.getElementById("rememberPasswordLink").addEventListener("click", function(event) {
+			event.preventDefault();
+			document.getElementById("forgotPasswordSection").style.display = "none";
+			document.querySelector(".login-container-wrapper").style.display = "block";
+		});
+	</script>
+	<script>
+		document.getElementById("showLoginForm").addEventListener("click", function(event) {
+			event.preventDefault();
+			document.getElementById("sign_up").style.display = "none";
+			document.getElementById("login").style.display = "block";
+		});
+	</script>
+    <script>
+        // Wait for the DOM to be ready
+        $(document).ready(function () {
+            // Handle login form submission
+            $('#loginForm').submit(function (event) {
+                event.preventDefault();
+
+                // Create a data object with form values
+                var data = {
+                    email: $('#login_username').val(),
+                    password: $('#login_password').val(),
+                };
+
+                // Make an AJAX request to your Django login view
+                $.ajax({
+                    type: 'POST',
+                    url: '/user/login/',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function (response) {
+                        // Handle success (e.g., redirect to a new page)
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        // Handle errors (e.g., display an error message)
+                        console.error(error);
+                    }
+                });
+            });
+
+            // Handle signup form submission
+            $('#signupForm').submit(function (event) {
+                event.preventDefault();
+
+                // Create a data object with form values
+                var data = {
+                    username: $('#signup_username').val(),
+                    email: $('#signup_username').val(),
+                    usertype: $('#user_type').val(),
+                    password: $('#signup_password').val(),
+                    confirm_password: $('#confirm_password').val(),
+                };
+
+                // Make an AJAX request to your Django signup view
+                $.ajax({
+                    type: 'POST',
+                    url: '/user/signup/',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function (response) {
+                        // Handle success (e.g., show a success message)
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        // Handle errors (e.g., display an error message)
+                        console.error(error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

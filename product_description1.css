@@ -3,6 +3,31 @@
   margin: 0;
   padding: 0;
 }
+
+.food-munch-logo {
+    width: 80px;
+    height: 70px;
+}
+
+#navItem1 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+
+#navItem2 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+
+#navItem3 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+
+#navItem4 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
 body {
   max-width: 1280px;
   margin: 0 auto;
@@ -147,3 +172,78 @@ hr {
     width: 100%;
   }
 }
+
+    /**foorter**/
+
+    .bg-footer-section {
+      background-color: grey;
+  }
+
+  .hr-line {
+      background-color: #000;
+  }
+
+  .footer-logo {
+      width: 56px;
+      height: 36px;
+  }
+
+  .footer-icon {
+      color: #5a7184;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      padding: 15px 30px 30px 15px;
+      background-color: #202b36;
+      margin-right: 8px;
+      margin-bottom: 8px;
+  }
+
+  .footer-description {
+      font-family: "Roboto";
+      color: #5a7184;
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 5px;
+  }
+
+  .footer-description-list {
+      list-style-type: none;
+      padding-left: 0;
+  }
+
+  .footer-description-copyright {
+      color: #959ead;
+      font-size: 16px;
+      font-family: "Roboto";
+      font-weight: 400;
+  }
+
+  .footer-description-text {
+      color: #5a7184;
+      font-size: 16px;
+      font-family: "Roboto";
+
+  }
+
+  .footer-heading {
+      color: #5a7184;
+      font-size: 18px;
+      font-family: "Roboto";
+      font-weight: 600;
+  }
+
+  .icon {
+      color: #5a7184;
+      font-size: 18px;
+  }
+
+  .vr-footer-section-text {
+      color: #5a7184;
+      font-size: 16px;
+      font-family: "Roboto";
+      font-weight: 400;
+      margin-bottom: 5px;
+  }
+
+  /**footer end**/

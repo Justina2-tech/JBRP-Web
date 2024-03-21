@@ -1,149 +1,249 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 30px;
-  }
-  
-  header {
-    margin-bottom: 20px;
-  }
-  
-  .product-container {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    gap: 40px;
-  }
-  
-  /* .img-card{
-      width: 40%;
-  } */
-  
-  .img-card img {
-    width: 100%;
-    flex-shrink: 0;
-    border-radius: 4px;
-    height: 520px;
-    object-fit: cover;
-  }
-  
-  .small-Card {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-top: 15px;
-    gap: 12px;
-  }
-  
-  .small-Card img {
-    width: 104px;
-    height: 104px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .small-Card img:active {
-    border: 1px solid #17696a;
-  }
-  
-  .sm-card {
-    border: 2px solid darkred;
-  }
-  
-  .product-info{
-    width: 60%;
-  }
-  .product-info h3 {
-    font-size: 32px;
-    font-family: Lato;
-    font-weight: 600;
-    line-height: 130%;
-  }
-  
-  .product-info h5 {
-    font-size: 24px;
-    font-family: Lato;
-    font-weight: 500;
-    line-height: 130%;
-    color: #ff4242;
-    margin: 6px 0;
-  }
-  
-  .product-info del {
-    color: #a9a9a9;
-  }
-  
-  .product-info p {
-    color: #424551;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.food-munch-logo {
+    width: 80px;
+    height: 70px;
+}
+
+#navItem1 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+
+#navItem2 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+
+#navItem3 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+
+#navItem4 {
+    color: #323f4b;
+    font-family: "Roboto";
+}
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 40px;
+}
+
+/* .img-card{
+    width: 40%;
+} */
+
+.img-card img {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 4px;
+  height: 520px;
+  object-fit: cover;
+}
+
+.small-Card {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 15px;
+  gap: 12px;
+}
+
+.small-Card img {
+  width: 104px;
+  height: 104px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.small-Card img:active {
+  border: 1px solid #17696a;
+}
+
+.sm-card {
+  border: 2px solid darkred;
+}
+
+.product-info{
+  width: 60%;
+}
+.product-info h3 {
+  font-size: 32px;
+  font-family: Lato;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.product-info h5 {
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 500;
+  line-height: 130%;
+  color: #ff4242;
+  margin: 6px 0;
+}
+
+.product-info del {
+  color: #a9a9a9;
+}
+
+.product-info p {
+  color: #424551;
+  margin: 15px 0;
+  width: 70%;
+}
+
+
+
+button {
+  background: #17696a;
+  border-radius: 4px;
+  padding: 10px 37px;
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #ff4242;
+  transition: ease-in 0.4s;
+}
+
+.delivery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  color: #787a80;
+  font-size: 12px;
+  font-family: Lato;
+  line-height: 150%;
+  letter-spacing: 1px;
+}
+
+hr {
+  color: #787a80;
+  width: 58%;
+  opacity: 0.67;
+}
+
+.pagination {
+    color: #787a80;
     margin: 15px 0;
-    width: 70%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+  .product-container{
+    flex-direction: column;
   }
-  
-  
-  
-  button {
-    background: #17696a;
-    border-radius: 4px;
-    padding: 10px 37px;
-    border: none;
-    color: white;
-    font-weight: 600;
+  .small-Card img{
+    width: 80px;
   }
-  
-  button:hover {
-    background: #ff4242;
-    transition: ease-in 0.4s;
+  .product-info{
+    width: 100%;
   }
-  
-  .delivery {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70%;
-    color: #787a80;
-    font-size: 12px;
-    font-family: Lato;
-    line-height: 150%;
-    letter-spacing: 1px;
+  echo "# product-details-page-html-css-js" >> README.md
+  .product-info p{
+    width: 100%;
   }
-  
-  hr {
-    color: #787a80;
-    width: 58%;
-    opacity: 0.67;
+
+  .delivery{
+    width: 100%;
   }
-  
-  .pagination {
-      color: #787a80;
-      margin: 15px 0;
-      cursor: pointer;
+
+  hr{
+    width: 100%;
   }
-  
-  @media screen and (max-width: 576px) {
-    .product-container{
-      flex-direction: column;
-    }
-    .small-Card img{
-      width: 80px;
-    }
-    .product-info{
-      width: 100%;
-    }
-    echo "# product-details-page-html-css-js" >> README.md
-    .product-info p{
-      width: 100%;
-    }
-  
-    .delivery{
-      width: 100%;
-    }
-  
-    hr{
-      width: 100%;
-    }
+}
+
+    /**foorter**/
+
+    .bg-footer-section {
+      background-color: grey;
   }
+
+  .hr-line {
+      background-color: #000;
+  }
+
+  .footer-logo {
+      width: 56px;
+      height: 36px;
+  }
+
+  .footer-icon {
+      color: #5a7184;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      padding: 15px 30px 30px 15px;
+      background-color: #202b36;
+      margin-right: 8px;
+      margin-bottom: 8px;
+  }
+
+  .footer-description {
+      font-family: "Roboto";
+      color: #5a7184;
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 5px;
+  }
+
+  .footer-description-list {
+      list-style-type: none;
+      padding-left: 0;
+  }
+
+  .footer-description-copyright {
+      color: #959ead;
+      font-size: 16px;
+      font-family: "Roboto";
+      font-weight: 400;
+  }
+
+  .footer-description-text {
+      color: #5a7184;
+      font-size: 16px;
+      font-family: "Roboto";
+
+  }
+
+  .footer-heading {
+      color: #5a7184;
+      font-size: 18px;
+      font-family: "Roboto";
+      font-weight: 600;
+  }
+
+  .icon {
+      color: #5a7184;
+      font-size: 18px;
+  }
+
+  .vr-footer-section-text {
+      color: #5a7184;
+      font-size: 16px;
+      font-family: "Roboto";
+      font-weight: 400;
+      margin-bottom: 5px;
+  }
+
+  /**footer end**/

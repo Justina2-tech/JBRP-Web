@@ -1,37 +1,38 @@
 from django.db import models
-from organiser.models import Products, Category
+from django.contrib.auth.models import User
 
-# Create your models here.
-class Vendors(models.Model):
-    vendorName = models.ForeignKey()
-    businessName = models.CharField()
-    vendorDesc = models.TextField()
-    contactInfo = models.CharField()
-    vendorImage = models.ImageField()
-    slug =  models.SlugField(max_length = 30, unique = True)
+class Vendor(models.Model):
+    vendor_name = models.CharField(max_length=100)
+    business_name = models.CharField(max_length=100)
+    vendor_desc = models.TextField()
+    contact_info = models.CharField(max_length=100)
+    vendor_image = models.ImageField(upload_to='vendor_images/')
+    slug = models.SlugField(max_length=30, unique=True)
 
     def __str__(self):
-        return self.vendorName
+        return self.vendor_name
+    
 
 class Customer(models.Model):
-    userName = models.ForeignKey()
-    emailAddress = models.CharField()
-    slug = models.SlugField(max_length = 30, unique = True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    email_address = models.EmailField()
+    slug = models.SlugField(max_length=30, unique=True)
 
     def __str__(self):
-        return self.userName
+        return self.user.username
 
-#represents a user wishlist
 class Wishlist(models.Model):
-    userName = models.ForeignKey(Customer, on_delete = models.CASCADE)
-    wishlistName = models.CharField(max_length=255)
-    dateCreated = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(max_length = 30, unique = True)
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    wishlist_name = models.CharField(max_length=255)
+    date_created = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=30, unique=True)
 
-#represent a product in the wishlist
+    def __str__(self):
+        return self.wishlist_name
+
 class WishlistEntry(models.Model):
-    userName = models.ForeignKey(Customer, on_delete = models.CASCADE)
-    product = models.ForeignKey(Products, on_delete = models.CASCADE)
-    wishlist = models.ForeignKey(Wishlist, on_delete = models.CASCADE, blank=True, null=True)
-    date_added = models.DateTimeField(auto_now_add = True)
-    slug = models.SlugField(max_length = 30, unique = True)
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    product = models.ForeignKey('organiser.Product', on_delete=models.CASCADE)
+    wishlist = models.ForeignKey(Wishlist, on_delete=models.CASCADE, blank=True, null=True)
+    date_added = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=30, unique=True)

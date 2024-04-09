@@ -52,13 +52,24 @@ class AddUserView(View):
 
 class HomeView(View):
     def get(self, request, *args, **kwargs):
-        return render(request,'fullstack/home.html' )
+        return render(request, 'fullstack/home.html')
+
+
+# shows after the registration
+class ProfileView(View):
+    def get(self, request, *args, **kwargs):
+        email = request.session.get('email')
+        return render(request, 'fullstack/profile.html', {'email': email})
+
+
+# shows after login
+class MainPageView(View):
+    def get(self, request, *args, **kwargs):
+        email = request.session.get('email')
+        return render(request, 'fullstack/main.html', {'email': email})
 
 @method_decorator(csrf_exempt, name='dispatch')
 class SignupView(View):
-    # def get(self, request, *args, **kwargs):
-    #     # Handle GET request to render the signup form
-    #     return render(request, 'fullstack/signup.html')
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body.decode('utf-8'))
@@ -81,10 +92,8 @@ class SignupView(View):
                 password=password,
                 usertype=data['usertype']
             )
-
-            # Check if the request wants JSON response
-            return JsonResponse({'status': 'success', 'message': 'User signed up successfully'})
-
+            request.session['email'] = data['email']
+            return JsonResponse({'status': 'success', 'message': 'User signed up successfully', 'redirect_url': '/user/profile/'})
         except Exception as e:
             return JsonResponse({'status': 'error', 'message': str(e)})
 
@@ -102,12 +111,13 @@ class LoginView(View):
             user = User.objects.filter(email=email, password=password).first()
 
             if user:
-                return JsonResponse({'status': 'success', 'message': 'Login successful'})
+                # Add more details if you want
+                request.session['email'] = user.email
+                return JsonResponse({'status': 'success', 'redirect_url': '/user/main/'})
             else:
                 return JsonResponse({'status': 'error', 'message': 'Email or password is incorrect'})
         except Exception as e:
             return JsonResponse({'status': 'error', 'message': str(e)})
-
 
 
 # views.py

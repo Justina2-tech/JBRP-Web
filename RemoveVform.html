@@ -1,0 +1,292 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
+    
+    header {
+      background-color: navy;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    header img {
+      height: 50px;
+    }
+    
+    header form {
+      display: flex;
+      align-items: center;
+    }
+    
+    header input[type="text"] {
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+    }
+    
+    header button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+    
+    nav {
+      display: flex;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    
+    nav a:hover {
+      text-decoration: underline;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    h1 {
+      margin-bottom: 20px;
+    }
+    
+    .vendor {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .vendor img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    
+    .vendor h2 {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    
+    .vendor p {
+      margin-bottom: 10px;
+    }
+    
+    .vendor a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .vendor a:hover {
+      text-decoration: underline;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      border-radius: 5px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Remove Vendor form styles */
+    .remove-vendor-form input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .remove-vendor-form input[type="submit"] {
+      background-color: #f44336;
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .remove-vendor-form input[type="submit"]:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+
+  <header>
+    <img src="https://i.ibb.co/0qnRnkF/LOGO.png" alt="LOGO" border="0" Class = "circle.responsive-img">
+    <form action="#">
+      <input type="text" placeholder="Remove Vendors...">
+      <button type="submit">Search</button>
+    </form>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+    </nav>
+  </header>
+
+  <main>
+        <!--static code for vendor list-->
+    <section class="vendor">
+      <div id="vendor-img">
+        <img src="https://i.ibb.co/Gn8YV4C/addepar-logo.png" alt="addepar-logo" border="0">
+      </div>
+      <div id="vendor-body">
+        <h2>ADDEPAR, INC.</h2>
+      </div>
+    </section>
+    <section class="vendor">
+      <div id="vendor-img">
+        <img src="https://i.ibb.co/xFszcCt/boc-logo.png" alt="boc-logo" border="0">
+      </div>
+      <div id="vendor-body">
+        <h2>BOC Group</h2>
+      </div>
+    </section>
+    <section class="vendor">
+        <div id="vendor-img">
+          <img src="https://i.ibb.co/7p2ddZW/allvue-logo.png" alt="allvue-logo" border="0">
+        </div>
+        <div id="vendor-body">
+          <h2>ALLVUE</h2>
+        </div>
+      </section>
+      <section class="vendor">
+        <div id="vendor-img">
+          <img src="https://i.ibb.co/y8DFD4x/freyda-logo.png" alt="freyda-logo" border="0">
+        </div>
+        <div id="vendor-body">
+          <h2>FREYDA</h2>
+        </div>
+      </section>
+      <section class="vendor">
+        <div id="vendor-img">
+        <img src="https://i.ibb.co/JcYNrP0/finbourne-logo.png" alt="finbourne-logo" border="0">
+        </div>
+        <div id="vendor-body">
+          <h2>FINBOURNE TECHNOLOGY</h2>
+        </div>
+      </section>
+      <section class="vendor">
+        <div id="vendor-img">
+          <img src="https://i.ibb.co/mt2cwWb/alveo.png" alt="alveo" border="0">
+        </div>
+        <div id="vendor-body">
+          <h2>ALVEO</h2>
+            </div>
+      </section>
+    <!-- Add more vendor sections here -->
+
+    <!-- Remove Vendor Form Modal -->
+    <div id="removeVendorModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Remove Vendor</h2>
+        <form class="remove-vendor-form">
+          <input type="text" placeholder="Vendor Name" required>
+          <input type="submit" value="Remove Vendor">
+        </form>
+      </div>
+    </div>
+    <!-- End of Remove Vendor Form Modal -->
+
+    <!-- Button to trigger the modal -->
+    <button id="removeVendorBtn">Remove Vendor</button>
+  </main>
+
+    <script>
+    // Get the modal
+    var modal = document.getElementById("removeVendorModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("removeVendorBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>
+{% load static %}

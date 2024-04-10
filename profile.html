@@ -1,58 +1,151 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Profile Completion</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-  <link rel='stylesheet'
-    href='https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css'>
-  <link rel="stylesheet" href="./profilecss.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Profile - Justina (Citisoft)</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <img src="logo1.jpg" width="403" height="132"></img>
-  <div class="container" id="Profile">
-    <h2>Complete Your Profile</h2>
-    <form action="submit_profile.php" method="POST">
-      <label for="fullname">Full Name:</label>
-      <input type="text" id="fullname" name="fullname" required>
+<style>
+  /* styles.css */
 
-      <label for="address"> Address: </label>
-      <input type="text" id="address" name="address" required>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+.container {
+  max-width: 800px; /* Increased max-width */
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-      <label for="phone">Phone</label>
-      <input type="number" id="phone" name="phone" required>
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob" name="dob" required>
+.company-logo {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
 
-      <label for="gender">Gender:</label>
-      <select id="gender" name="gender" required>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
+.return-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
-      <label for="Product interested/provided">Type of Product interested/Provided:</label>
+.return-button:hover {
+  background-color: #0056b3;
+}
 
-      <input type="checkbox" id="Product interested/provided" name="Product interested/provided" value="Finance">
-      <label for="finance">Finance</label>
-      <input type="checkbox" id="Product interested/provided" name="Product interested/provided" value="Real Estate">
-      <label for="real estate">Real Estate</label>
-      <input type="checkbox" id="Product interested/provided" name="Product interested/provided"
-        value="Home Appliances">
-      <label for="Home Appliances">Home Appliances</label>
+.profile {
+  display: flex;
+}
 
+.profile-picture {
+  flex: 0 0 120px; /* Fixed width for the profile picture */
+}
 
-      <button type="submit">Submit</button>
-    </form>
+.profile-picture img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.profile-info {
+  margin-left: 20px;
+}
+
+.profile-info h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.profile-info h2 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.company {
+  color: #007bff; /* Company name color */
+  font-weight: bold;
+}
+
+.profile-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-info ul li {
+  margin-bottom: 5px;
+}
+
+.profile-info ul li:last-child {
+  margin-bottom: 0;
+}
+
+.profile-details {
+  margin-top: 30px;
+}
+
+.profile-details h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-details p {
+  color: #666;
+  margin-bottom: 10px;
+}
+</style>
+  <div class="container">
+    <div class="header">
+      <img src="https://i.ibb.co/0qnRnkF/LOGO.png" alt="LOGO" class="company-logo">
+      <a href="indexA.html" class="Back-button">Back</a>
+    </div>
+    <div class="profile">
+      <div class="profile-picture">
+        <img src="https://i.ibb.co/yyJ175J/my-pics.jpg" alt="my-pics" border="0">
+      </div>
+      <div class="profile-info">
+        <h1>Justina</h1>
+        <h2>Admin</h2>
+        <p class="company">Citisoft</p>
+        <ul>
+          <li>Email: justina@citisoft.com</li>
+          <li>Phone: +44-79-456-7890</li>
+          <li>Location: Cambridge, United Kingdom</li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile-details">
+      <h3>About Justina</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisi eget condimentum sodales, metus metus ultrices dui, nec vestibulum mauris mi in mi. Sed condimentum odio velit, id iaculis ligula ullamcorper vel. Duis quis suscipit urna. Sed ac diam ut enim iaculis faucibus. Nulla facilisi. Proin ultricies felis sit amet nisl varius, nec aliquet ligula scelerisque. Proin sagittis urna eget eros vehicula vehicula. Donec et lectus vitae quam vehicula commodo. Sed dictum, urna nec congue laoreet, felis mauris iaculis risus, eu aliquet arcu magna at nulla. Vivamus pharetra sapien eu lorem placerat, eu congue felis gravida. Nunc sollicitudin libero et mauris maximus elementum.</p>
+      <h3>Skills</h3>
+      <ul>
+        <li>Python programming</li>
+        <li>Web development</li>
+        <li>Database management</li>
+        <li>Project management</li>
+      </ul>
+    </div>
   </div>
 </body>
-
 </html>
+{% load static %}

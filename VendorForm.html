@@ -1,0 +1,215 @@
+{% load static %}
+{%block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Vendor Form</title>
+<style>
+  /* Basic CSS for styling the form */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    
+  }
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; /* Darker font color */
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="tel"],
+   select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  /* Additional styling */
+  header {
+    background-color: navy;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header img {
+    height: 50px;
+  }
+  
+  header form {
+    display: flex;
+    align-items: center;
+  }
+  
+  header input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  header button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  nav {
+    display: flex;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+   .logo {
+    text-align: center;
+  }
+  .logo img {
+    width: 100px;
+    height: auto;
+    border: 0;
+    border-radius: 50%;
+  }
+  select {
+    position: relative;
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+  }
+</style>
+<header>
+    <img src="https://i.ibb.co/0qnRnkF/LOGO.png" alt="LOGO" border="0" Class = "circle.responsive-img">
+    <form action="#">
+      <input type="text" placeholder="Add Vendors" id="vendorName" name="vendorName" required>
+      <button type="submit">Search</button>
+    </form>
+    <nav>
+      <a href="Admin.html">Home</a>
+      <a href="#">Products</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Add Vendor</h2>
+  <form action="{% url 'submit_VendorForm' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+      <label for="vendorNameform">Vendor Name</label>
+      <input type="text" id="vendorNameform" name="vendorName" required>
+    </div>
+    <div class="form-group">
+      <label for="contactEmail">Contact Email</label>
+      <input type="email" id="contactEmail" name="contactEmail" required>
+    </div>
+    <div class="form-group">
+      <label for="websiteUrl">Website URL</label>
+      <input type="url" id="websiteUrl" name="websiteUrl">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="businessType">Business Type</label>
+      <select id="businessType" name="businessType" required>
+        <option value="">Select Business Type</option>
+        <option value="Retail">Retail</option>
+        <option value="Service">Service</option>
+        <option value="Manufacturing">Manufacturing</option>
+        <option value="Consulting">Consulting</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+    <div class="form-group">
+      <label for="location">Location</label>
+      <select id="location" name="location" required>
+        <option value="">Select Country</option>
+        <option value="Australia">Australia</option>
+        <option value="Albania">Albania</option>
+        <option value="Algeria">Algeria</option>
+        <option value="Belarus">Belarus</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="Belgium">Belgium</option>
+        <option value="Cameroon">Cameroon</option>
+        <option value="Canada">Canada</option>
+        <option value="Nigeria">Nigeria</option>  
+        <option value="India">India</option>
+        <option value="UnitedStateofAmerica">United State of America</option>
+        <option value="Unitedkingdom">United Kingdom</option>
+     
+        <!-- Add more countries as needed -->
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="postcode">Postcode</label>
+      <input type="text" id="postcode" name="postcode" required>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="companyLogo">Company Logo</label>
+      <input type="file" id="companyLogo" name="companyLogo" accept="image/*">
+    </div>
+    <div class="form-group">
+      <label for="totalProducts">Total Number of Products</label>
+      <input type="number" id="totalProducts" name="totalProducts" required>
+    </div>
+       {{ form.as_p }}
+    <input type="submit" value="Submit" class="btn btn-success">
+   
+  </form>
+</div>
+{% endblock content %}
+</body>
+</html>
+

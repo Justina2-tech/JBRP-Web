@@ -1,10 +1,11 @@
+{% load static %}cls
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vendor List</title>
+    <title>Vendor List</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -117,13 +118,13 @@
     }
 </style>    
   <header>
-    <img src="https://i.ibb.co/MZj2JFr/JBPL-logo-03.png/JBPL logo_03.png" Class = "circle.responsive-img">
+    <img src="https://i.ibb.co/0qnRnkF/LOGO.png" alt="LOGO" border="0" Class = "circle.responsive-img">
     <form action="#">
       <input type="text" placeholder="Search Vendors...">
       <button type="submit">Search</button>
     </form>
     <nav>
-      <a href="#">Home</a>
+      <a href="Home.html">Home</a>
       <a href="#">Products</a>
     </nav>
   </header>
@@ -133,7 +134,7 @@
     <!--static code for vendor list-->
     <section class="vendor">
       <div id="vendor-img">
-        <img src='addepar_logo.png' alt="Vendor Image" class="vendor-image">
+        <img src="https://i.ibb.co/Gn8YV4C/addepar-logo.png" alt="addepar-logo" border="0">
       </div>
       <div id="vendor-body">
         <h2>ADDEPAR, INC.</h2>
@@ -143,8 +144,8 @@
       </div>
     </section>
     <section class="vendor">
-      <div id="vendor-img">
-        <img width="100%" src='boc_logo.png' alt="Vendor Image" class="vendor-image">
+      <div id="vendor2-img">
+        <img src="https://i.ibb.co/xFszcCt/boc-logo.png" alt="boc-logo" border="0">
       </div>
       <div id="vendor-body">
         <h2>BOC Group</h2>
@@ -156,8 +157,8 @@
       </div>
     </section>
     <section class="vendor">
-      <div id="vendor-img">
-        <img width="100%" src='allvue_logo.png' alt="Vendor Image" class="vendor-image">
+      <div id="vendor3-img">
+        <img src="https://i.ibb.co/7p2ddZW/allvue-logo.png" alt="allvue-logo" border="0">
       </div>
       <div id="vendor-body">
         <h2>ALLVUE</h2>
@@ -167,8 +168,8 @@
       </div>
     </section>
     <section class="vendor">
-      <div id="vendor-img">
-        <img width="100%" src='freyda_logo.png' alt="Vendor Image" class="vendor-image">
+      <div id="vendor4-img">
+        <img src="https://i.ibb.co/y8DFD4x/freyda-logo.png" alt="freyda-logo" border="0">
       </div>
       <div id="vendor-body">
         <h2>FREYDA</h2>
@@ -179,8 +180,8 @@
       </div>
     </section>
     <section class="vendor">
-      <div id="vendor-img">
-        <img width="100%" src='finbourne_logo.png' alt="Vendor Image" class="vendor-image">
+      <div id="vendor5-img">
+        <img src="https://i.ibb.co/JcYNrP0/finbourne-logo.png" alt="finbourne-logo" border="0">
       </div>
       <div id="vendor-body">
         <h2>FINBOURNE TECHNOLOGY</h2>
@@ -191,8 +192,8 @@
       </div>
     </section>
     <section class="vendor">
-      <div id="vendor-img">
-        <img width="100%" src='alveo-.png' alt="Vendor Image" class="vendor-image">
+      <div id="vendor6-img">
+        <img src="https://i.ibb.co/mt2cwWb/alveo.png" alt="alveo" border="0">
       </div>
       <div id="vendor-body">
         <h2>ALVEO</h2>
@@ -204,18 +205,8 @@
 
 
 
-    <!--to fetch list from datatbas with django
-
-        {% for vendor in vendors %}
-        <section class="vendor">
-          <img src="{{ vendor.image.url }}" alt="Vendor Image" class="vendor-image">
-          <h2>{{ vendor.name }}</h2>
-          <p>{{ vendor.description }}</p>
-          <a href="#">Visit Vendor Page</a>
-        </section>
-        {% endfor %}-->
-        <button onclick="addVendor()">Add Vendor</button>
-        <button onclick="RemoveVendor()">Remove Vendor</button>
+        <a href="VendorForm.html"><button>Add Vendor</button></a>
+        <a href="RemoveVform.html"><button>Remove Vendor</button>
   </main>
 
   <footer>
@@ -224,3 +215,4 @@
 </body>
 
 </html>
+{% load static %}

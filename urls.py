@@ -1,14 +1,25 @@
-from django.urls import path 
-from django.views.generic import RedirectView
-from .import views
+"""
+URL configuration for dashboard1 project.
 
-urlpatterns =[
-  path('', views.indexA,name='dash'),
-  path('indexA.html',views.indexA,name='dash'),
-  path('vendorlist.html',views.vendorlist,name='vendorlist'),
-  path('show_vendor_form.html',views.VendorForm,name='VendorForm'),
-  path('profile.html',views.profile,name='profile'),
-  path('RemoveVform.html',views.RemoveVform,name='RemoveVform'),
-  path('submit_VendorForm/', views.submit_VendorForm, name='submit_VendorForm'),
-  path('vendorlist2.html',views.vendorlist2,name='vendorlist2'),
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('dash/', include('dash.urls')),
+     path('', include('dash.urls')),  # Replace 'your_app' with the name of your Django app
+    
 ]

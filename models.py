@@ -1,27 +1,25 @@
 from django.db import models
-from django.core.exceptions import ValidationError
-
 
 # Create your models here.
 
-class VendorForm(models.Model):  # Corrected class name
-    vendor_name = models.CharField(max_length=100)
-    contact_email = models.EmailField()
-    website_url = models.URLField(blank=True)
-    Description = models.TextField(default='')
-    business_type = models.CharField(max_length=50)
-    address = models.CharField(max_length=200)
-    location = models.CharField(max_length=100)
-    postcode = models.CharField(max_length=20)
-    phone_number = models.CharField(max_length=20)
-    company_logo = models.ImageField(upload_to='logos/', blank=True)
-    total_products = models.PositiveIntegerField()
+CATAGORY_CHOICES={
+    ('IW','IBM'),
+    ('LI','Limina'),
+    ('FD','Freyda'),
+    ('EA','Ezops'),
+    ('DY','Dynamo'),
+    ('SP','Spark'),
+    ('FB','Finbourne'),
 
-    def __str__(self):
-        return self.vendor_name
-    
-    class Meta:  # Corrected class name
-        db_table = 'VendorForm'
-        
-    
-    
+}
+
+class Product(models.Model):
+    title = models.CharField(max_length=100)
+    selling_price = models.FloatField()
+    discounted_price = models.FloatField()
+    composition = models.TextField(default="")
+    proapp = models.TextField(default="")
+    category = models.CharField(choices=CATAGORY_CHOICES,max_length=2)
+    product_image = models.ImageField(upload_to='product')
+    def _str_(self):
+        return self.title

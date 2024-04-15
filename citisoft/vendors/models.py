@@ -1,6 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class Vendoralt(models.Model):
+    vendor_name = models.CharField(max_length=100)
+    business_name = models.CharField(max_length=100)
+    vendor_desc = models.TextField()
+    contact = models.CharField(max_length=20, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    website = models.URLField(blank=True, null=True) 
+    vendor_image = models.ImageField(upload_to='vendor_images/')
+    slug = models.SlugField(max_length=30, unique=True)
+
+    def __str__(self):                             
+        return self.business_name
+
 class Vendor(models.Model):
     username = models.CharField(max_length=100, default='unknown')
     vendor_name = models.CharField(max_length=100)
@@ -11,8 +24,8 @@ class Vendor(models.Model):
     website = models.URLField(blank=True, null=True) 
     vendor_image = models.ImageField(upload_to='vendor_images/')
     slug = models.SlugField(max_length=30, unique=True)
-
-    def __str__(self):
+ 
+    def __str__(self):                             
         return self.business_name 
 
 class Customer(models.Model):

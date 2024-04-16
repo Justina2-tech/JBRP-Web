@@ -29,11 +29,12 @@ class Vendor(models.Model):
         return self.business_name 
 
 class Customer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE) 
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    email_address = models.EmailField()
     slug = models.SlugField(max_length=30, unique=True)
 
     def __str__(self):
-        return self.user.username    
+        return self.user.username
 
 class Wishlist(models.Model):
     user = models.ForeignKey(Customer, on_delete=models.CASCADE)

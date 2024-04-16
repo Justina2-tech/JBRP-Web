@@ -11,7 +11,7 @@ CATAGORY_CHOICES={
     ('SP','Spark'),
     ('FB','Finbourne'),
 
-}
+} 
 
 class Product(models.Model):
     title = models.CharField(max_length=100)

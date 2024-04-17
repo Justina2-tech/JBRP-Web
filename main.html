@@ -1,0 +1,12 @@
+{%extends "fullstack/layout.html"%}
+{%block body%}
+{%load static%}
+{% if email is not none %}
+<div>
+    <h1>Home Page</h1>
+    <p>{{email}}</p>
+</div>
+{% else %}
+<h1>Your not logged in</h1>
+{% endif %}
+{%endblock%}

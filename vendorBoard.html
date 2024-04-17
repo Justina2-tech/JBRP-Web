@@ -1,0 +1,21 @@
+{%extends "fullstack/layout.html"%}
+{%block title%}Vendor Dashboard{%endblock%}
+{%block body%}
+{% load static %}
+{% if email is not none %}
+<div>
+    <h1>Vendor Board</h1>
+    <p>Email:{{email}}</p>
+    <p>Usertype:{{usertype}}</p>
+    <p>Username:{{username}}</p>
+    <p>Companyname:{{companyname}}</p>
+    <p>Address:{{address}}</p>
+    <p>Phone:{{phone}}</p>
+    <p>Dob:{{dob}}</p>
+    <p>Gender:{{gender}}</p>
+    <p>Product Provided:{{product_provided}}</p>
+</div>
+{% else %}
+<h1>Your not logged in</h1>
+{% endif %}
+{%endblock%}

@@ -128,13 +128,14 @@
       <button type="submit">Search</button>
     </form>
     <nav>
-      <a href="Admin.html">Home</a>
-      <a href="#">Products</a>
+      <a href="Home.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="vendorlist.html">Back</a>
     </nav>
   </header>
   <div class="container">
     <h2>Add Vendor</h2>
-  <form action="{% url 'submit_VendorForm' %}" method="POST" enctype="multipart/form-data">
+  <form action="{% url 'VendorForms' %}" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="form-group">
       <label for="vendorNameform">Vendor Name</label>

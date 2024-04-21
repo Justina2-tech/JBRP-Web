@@ -1,0 +1,163 @@
+{% load static %}
+{%block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <img src="https://i.ibb.co/0qnRnkF/LOGO.png" alt="LOGO" border="0" Class = "circle.responsive-img">
+    <form action="#">
+      <input type="text" placeholder="Search Product" id="name" name="name" required>
+      <button type="submit">Search</button>
+    </form>
+    <nav>
+      <a href="Home.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="indexA.html">Back</a>
+    </nav>
+</header>
+<body>
+    <style>
+        /* Basic CSS for styling the form */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4;
+          
+        }
+        .container {
+          max-width: 600px;
+          margin: 20px auto;
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .form-group {
+          margin-bottom: 20px;
+        }
+        label {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 5px;
+          color: #333; /* Darker font color */
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="tel"],
+         select {
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+          background-color: #0056b3;
+        }
+        /* Additional styling */
+        header {
+          background-color: navy;
+          color: #fff;
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        header img {
+          height: 50px;
+        }
+        
+        header form {
+          display: flex;
+          align-items: center;
+        }
+        
+        header input[type="text"] {
+          padding: 8px;
+          border-radius: 5px;
+          border: none;
+        }
+        
+        header button[type="submit"] {
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          padding: 8px 15px;
+          cursor: pointer;
+        }
+        nav {
+          display: flex;
+        }
+        
+        nav a {
+          color: #fff;
+          text-decoration: none;
+          margin-left: 20px;
+        }
+        
+        nav a:hover {
+          text-decoration: underline;
+        }
+         .logo {
+          text-align: center;
+        }
+        .logo img {
+          width: 100px;
+          height: auto;
+          border: 0;
+          border-radius: 50%;
+        }
+        select {
+          position: relative;
+          z-index: 1000; /* Ensure dropdown appears above other elements */
+        }
+      </style>
+    <div class="container">
+        <h2>Add Product</h2>
+        <form action="{% url 'ProductForms' %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+        <div class="form-group">
+         <label for="productNameform"> Product Name:</label>
+         <input type="text" name="productName" required>
+      </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="productimage">Product Image:</label>
+                <input type="file" id="Productimage" name="Productimage" accept="image/*" required>
+            </div>
+            {{ form.as_p }}
+            <input type="submit" value="Submit" class="btn btn-success">
+        </form>
+    </div>
+
+   
+    {% endblock content %}
+</body>
+</html>

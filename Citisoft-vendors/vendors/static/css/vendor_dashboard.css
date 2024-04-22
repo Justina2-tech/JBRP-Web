@@ -1,0 +1,161 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #10225C;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h1 {
+    margin: 0;
+    color: #fff
+  }
+  
+  nav {
+    background-color: #e0e0e0;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: black;
+  }
+
+  nav a:active {
+    color: #10225C;
+  }
+  
+  main {
+    padding: 20px;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+  }
+  
+  .stats {
+    width: 45%;
+    float: left;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .stats p {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .products {
+    width: 100%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .products ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .products li {
+    margin: 10px 0;
+  }
+  
+  .products li a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .products li p {
+    float: right;
+  }
+  
+  .welcome-text{
+    color: #fff;
+  }
+
+  .cards_left{
+    width: 48%;
+  }
+
+  .cards_right{
+    width: 48%;
+  }
+
+  .small_card{
+    height: 140px;
+    background-color: #fcfbfb;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 26px 36px;
+  }
+
+  .large_card{
+    height: 304px;
+    background-color: #fcfbfb;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 26px 36px;
+  }
+
+  .card_body{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card_title{
+    display: flex; 
+    flex-direction: row;
+  }
+
+  .stat_figure{
+    font-size: xx-large;
+    font-weight: bold;
+    padding-right: 8px;
+    margin: 0;
+  }
+
+  .see_all{
+    background-color: #10225C;
+    color: white;
+    border: 0;
+    padding: 8px 16px;
+    margin: 8px;
+
+  }
+
+  .see_all a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+
+  .prod-name{
+    color: grey;
+  }

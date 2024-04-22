@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/manage_products.css' %}">
+</head>
+<body>
+    <header>
+        <p class="welcome-text">Welcome, {{ vendor.business_name }}</p>
+        <h1>Manage Products</h1>
+      </header>
+      <nav>
+        <ul>
+            <li><a href="/vendors/dashboard/" class="{% if current_page == 'home' %}active{% endif %}">Home</a></li>
+            <li><a href="/vendors/products/1/" class="{% if current_page == 'home' %}active{% endif %}">Products</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+      </nav>
+      <main>
+        <div class="container">
+            <div class="head_content">
+                <h3>Product list</h3>
+                <a id="add_product_btn" href="{% url 'create-product' %}">Add New Product</a>
+            </div>
+            <div class="product-list">
+                <ul>
+                {% for product in products %} 
+                    <li>
+                        <div class="list-item">
+                            <div class="prod-image">
+                            {% if product.product_image %}
+                                <img src="{{ product.product_image.url }}" alt="Product Image">
+                            {% else %}
+                                {% endif %}
+                            </div>
+                            <div class="details">
+                                <h4 class="prod-name">{{ product.product_name }}</h4>
+                                <p class="prod-desc">{{ product.product_desc|truncatewords:10 }}</p> 
+                            </div>
+                            <button class="delete" data-product-id="{{ product.id }}">Delete</button>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+            
+        </div>
+        <script src="{% static 'javascript/manage_products.js' %}"></script>
+      </main>
+    
+      
+    
+    </body>
+</html>
